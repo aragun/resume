@@ -1,0 +1,193 @@
+%
+% LaTeX source of my resume
+% =========================
+%
+% Heavily commented to to fit even LaTeX beginners (hopefully).
+%
+% See the `README.md` file for more info.
+%
+% This file is licensed under the CC-NC-ND Creative Commons license.
+%
+
+
+% Start a document with the here given default font size and paper size.
+\documentclass[10pt,a4paper]{article}
+
+% Set the page margins.
+\usepackage[letterpaper,margin=0.55in]{geometry}
+
+% Setup the language.
+\usepackage[english]{babel}
+\hyphenation{Some-long-word}
+
+% Makes resume-specific commands available.
+\usepackage{resume}
+
+\usepackage{enumitem}
+
+\begin{document}  % begin the content of the document
+\sloppy  % this to relax whitespacing in favour of straight margins
+
+
+% title on top of the document
+\maintitle{Anurag Pratik}{}{}
+
+\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+
+% \noindent prevents paragraph's first lines from indenting
+% \mbox is used to obfuscate the email address
+% \sbull is a spaced bullet
+% \href well..
+% \\ breaks the line into a new paragraph
+\noindent\href{mailto:anuragprateek@gmail.com}{anuragprateek\mbox{}@\mbox{}gmail.com}\sbull
+(+91) 7032714005\sbull
+%\\
+F1202, Mantri Celestia, Gachibowli\sbull
+Hyderabad\sbull India 500032
+%Github: \href{https://github.com/anuragprateek}{anuragprateek}
+\spacedhrule{0.5em}{-0.4em}
+
+\roottitle{Education}
+
+\headedsection
+  {\href{}{Indian Institute of Technology (IIT), Guwahati}}
+  {\textsc{Guwahati, India}} {%
+  \headedsubsection
+    {Bachelor of Technology (B.Tech.)~in Mathematics and Computing}
+    {July~'10 -- May~'14} {}
+}
+
+\headedsection
+{\href{}{Delhi Public School}}
+{\textsc{Patna, India}} {%
+	\headedsubsection
+	{Senior Secondary (AISSCE, CBSE), \textit{Percentage:~92.6}}
+	{April~'10} {}
+
+	\headedsubsection
+	{Secondary (AISSE, CBSE), \textit{Percentage:~93.0}}
+	{April~'08} {}
+	
+}
+
+\spacedhrule{0.5em}{-0.4em}
+
+\roottitle{Experience}
+
+\headedsection  % sets the header for the section and includes any subsections
+  {\href{}{\textbf{Microsoft}}}
+  {\textsc{Hyderabad, India}}
+  {%
+  \headedsubsection
+    {Software Engineer, Azure Backup Data Plane Engineering}
+    {June~'14 -- Present}
+    {\bodytext{
+    \begin{itemize}
+    %\item Part of 13-member team building the multi-petabyte scale data plane for Microsoft's cloud backup products.
+    \item Shipped GFS (Grandfather-Father-Son) backup rotation scheme for Microsoft Azure Backup single-handedly.
+    \item Designed the critical back-end service logic to tag backups as Weekly, Monthly, Yearly for Long Term Retention as per a user-defined policy (more than 10\textsuperscript{12} unique policies possible). 
+    \item Helped create a library to abstract Azure's Storage Client Library as part of migrating service code to SCL 4.3.~Led to upto 50\% improvement in the performance of our APIs.
+    \item Owner of the File Catalog Service; a cloud service that allows item level recovery for Microsoft Azure Backup.
+    \item Languages and libraries used:~C\#, C++, WCF, Windows Forms, Azure Storage Client Library.
+    \end{itemize}
+}}
+}
+
+\headedsection  % sets the header for the section and includes any subsections
+  {\href{}{\textbf{Qualcomm}}}
+  {\textsc{Hyderabad, India}}
+  {%
+  \headedsubsection
+    {Interim Engineering Intern}
+    {May~'13 -- July~'13}
+    {\bodytext
+    {
+    % Working on the development of unsupervised learning approaches to restore case information in raw text.
+    \begin{itemize}
+    \item Designed and implemented a proof-of-concept system from scratch integrating the open-source web-based test management tool Testlink with Qualcomm's internal test automation tool Asia Test Manager.
+    \item Offered a full-time job offer on the completion of the internship.
+    \item Language used:~Perl, Javascript, PHP.
+    \end{itemize}}
+    }
+   
+}
+
+
+\spacedhrule{0.5em}{-0.4em}
+
+\roottitle{Selected Projects}
+\vspace{0.15cm}
+\begin{itemize}[labelindent=1.5em,labelsep=-0.3cm,leftmargin=*]
+\item \headedsubsection 
+    {\href{}{\normalfont \textbf{Bachelor Thesis:} Built a Concept Extraction System to identify categories "Problems", "Tests" and "Treatments" in medical discharge summaries.~Used unsupervised deep learning methods to learn vector-based semantic representation for words and a supervised deep learning model to learn the classifier.~Outperformed models like Conditional Random Fields with an inexact F1-score of 0.79.
+}}{{{Aug~'13 -- Apr~'14}}}
+  %{\textsc{}}
+    {\bodytext{Advisors:~Prof.~Ashish Anand, Prof.~Arabin Dey, Indian Institute of Technology Guwahati}}
+% \headedsection 
+%     {\href{}{Implemented Alternating Least Squares for a collaborative filtering based recommender system for the MovieLens dataset.
+% }}{\emph{{June \apo15 -- July\apo15}}}
+%   %{\textsc{}}
+%     {\bodytext{Language and libraries used:~Apache Spark, MLlib, Python.}}
+
+\item \headedsubsection
+{Pint-OS to Burrit-OS}{{{Aug~'12-Nov~'12}}}
+{\bodytext{Built upon a bare bones OS Kernel (developed at Standford University) by implementing various advanced OS constructs like process synchronization primitives, implementing schemes for running programs in both User and Kernel modes, File System management and design of Virtual Memory by demand paging.}}
+
+%\item \headedsubsection
+%{Socket Programming }{{{Feb~'13}}}
+%{\bodytext{GET and PUT methods for HTTP Server and Client}}
+
+\item \headedsubsection  % sets the header for the section and includes any subsections
+%comment: ~Used word2vec to learn vector-based semantic word representation and an ensemble model consisting of a Multilayer Perceptron and a Logistic Regression classifier.
+  {{\normalfont Used Yelp academic dataset to predict whether a restaurant would pass its public health inspection.~Finished 6\textsuperscript{th} among 186 participants.}}{{{Sep~'15 -- Oct~'15}}}
+  %{\textsc{}}
+  {\bodytext{Language and libraries used:~Pybrain, Scikit-learn, nltk.}}
+
+%~Ranked dishes by using sentiment analysis of reviews.~Also ranked restaurants for each specific dish and cuisine.
+\item \headedsubsection  % sets the header for the section and includes any subsections
+  {\href{}{\normalfont Mined popular dishes for Indian cuisine from Yelp academic dataset using topical phrase mining techniques.~Used Long Short Term Memory (LSTM) network to perform sentiment analysis.}}{{{Sep~'15 -- Oct~'15}}}
+  %{\textsc{}}
+  {\bodytext{Language and libraries used:~Theano, \href{http://arxiv.org/pdf/1406.6312.pdf}{ToPMine}, \href{http://jialu.cs.illinois.edu/paper/sigmod2015-liu.pdf}{SegPhrase}.}}
+
+
+%\item \headedsubsection  % sets the header for the section and includes any subsections
+%   {\href{}{Investigating the reasons behind the high failure rate of venture-capital backed start-ups and remedial measures taken at different stages of failure.}}{\emph{{Feb \apo14 -- Present}}}
+%{\href{}{\normalfont Tried to obtain an effective information retrieval model to optimize a search engine as part of a MOOC called Text Retrieval and Search Engines.~Experimented with different ranking functions like BM25, Jelinek-Mercer.~Implemented pseudo feedback through Rocchio's method.}}{{{Mar~'15 -- Apr~'15}}}
+  %{\textsc{}}
+%{\bodytext{Toolkit used:~\href{https://meta-toolkit.github.io/meta/doxygen/namespaces.html}{MeTA}}}
+\end{itemize}
+% \headedsection  % sets the header for the section and includes any subsections
+%   {\href{}{Compared the performance of stepwise feature selection methods with LASSO on a correlated population structure.
+%   }}{\emph{{Oct \apo14 -- Dec \apo14}}}
+%   {\bodytext{Language and libraries used:~R, MASS, glmnet.}}
+
+% \spacedhrule{0.5em}{-0.4em}
+% \roottitle{Skills}
+% {\bodytext{\textbf{Programming Languages}:~Python, Java , Scala, R, C++}}
+% {\bodytext{\textbf{Others}:~SQL, Apache Hadoop, Apache Pig, Apache Spark, Git, \LaTeX.}}
+
+\spacedhrule{0.5em}{-0.4em}
+
+\roottitle{Additional Activities}
+\vspace{0.15cm}
+\begin{itemize}[labelindent=1.5em,labelsep=-0.3cm,leftmargin=*]
+\item \headedsubsection 
+{{\normalfont \href{http://www.isical.ac.in/~rmo/}{Regional Mathematical Olympiad}:~one of approximately 1000 students to qualify for the Indian National Mathematical Olympiad (INMO) from across India. 
+}}{{{}}}
+{\bodytext{Regional Rank 8 in 2008, Regional Rank 7 in 2009.}}
+
+\item \headedsubsection 
+{\href{}{\normalfont Highest Topcoder Rating:~\href{https://www.topcoder.com/members/f1zz0_13/details/?track=DATA_SCIENCE&subTrack=SRM&tab=statistics}{1222} (Blue), Highest Codeforces Rating:~\href{http://codeforces.com/profile/thatDarkHorse}{1696} (Expert) 
+	}}{{{}}}{{}}
+	%{\bodytext{Relevant courses:~Data Mining Specialization (UIUC), Mining Massive Datasets (Stanford), Compilers (Stanford).}}
+
+\item \headedsubsection 
+{\href{}{\normalfont MOOC (Massive Open Online Courses) enthusiast with 12 Certificates of Accomplishments on Coursera.
+}}{{{}}}
+{\bodytext{Relevant courses:~\href{https://www.coursera.org/account/accomplishments/specialization/VQKVCUWBWEM9}{Data Mining Specialization (UIUC)}, Mining Massive Datasets (Stanford), Compilers (Stanford).}}
+
+%\item \headedsubsection {\normalfont Central-Midfielder of the IIT Guwahati Football Teams at Inter IIT Sports Meets 2010, 2011.}{{{}}}
+
+\end{itemize}
+
+\end{document}
